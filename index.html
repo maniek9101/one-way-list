@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>One-way list</title>
+</head>
+
+<body>
+
+    <p>Implementation of a one-way list</p>
+    <p>Currently available methods:</p>
+    <ul>
+        <li>addEnd(value);</li>
+        <li>addStart(value);</li>
+        <li>length();</li>
+        <li>showList();</li>
+    </ul>
+
+    <p>In console you can try how list work, basic object is myList, on him you can make any operation.</p>
+    <p>For example... myList.addEnd(2); etc...;)</p>
+
+
+
+    <script>
+        class element {
+            constructor(value) {
+                this.value = value;
+                this.next = null;
+            }
+        }
+        class list {
+            constructor(first) {
+                this.first = null;
+            }
+            showList() {
+                if (this.first != null) {
+                    var tmp = this.first;
+                    while (tmp != null) {
+                        console.log(tmp.value);
+                        tmp = tmp.next;
+                    }
+                } else {
+                    console.log('List is empty');
+                }
+            }
+            addEnd(customValue) {
+                var newElement = new element(customValue);
+                if (this.first == null) {
+                    this.first = newElement;
+                } else {
+                    var tmp = this.first;
+                    while (tmp.next != null) {
+                        tmp = tmp.next;
+                    }
+                    tmp.next = newElement;
+                }
+            }
+            addStart(customValue) {
+                var newElement = new element(customValue);
+                if (this.first == null) {
+                    this.first = newElement;
+                } else {
+                    var tmp = this.first;
+                    this.first = newElement;
+                    this.first.next = tmp;
+                }
+            }
+            addOnIndex(ownValue) {
+
+            }
+            length() {
+                var count = 0;
+                var tmp = this.first;
+                while (tmp != null) {
+                    count = count + 1;
+                    tmp = tmp.next;
+                }
+                return 'length is:' + count;
+            }
+        }
+        var myList = new list();
+    </script>
+</body>
+
+</html>
