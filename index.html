@@ -1,121 +1,224 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="pl">
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Hello Colors</title>
+    <title>Quality Point</title>
 </head>
 
 <body>
-    <div class="top">
-        <div class="H">
+    <header id="home">
+        <div class="header-nav">
+            <div class="header-nav-mobile">
+                <!--<a class="empty main-page"><img src="images/logo_small_white.png"></a>-->
+                <button>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
             <nav id="nav-menu">
                 <ul>
-                    <li><a href="#">oferta</a></li>
-                    <li><a href="#">portfolio</a></li>
-                    <li><a href="#">o nas</a></li>
-                    <li><a href="#">kontakt</a></li>
+                    <li><a class="home" href="#home">HOME</a></li>
+                    <li><a class="ofert" href="#ofert">OFERTA</a></li>
+                    <li><a class="tools" href="#tools">NARZĘDZIA</a></li>
+                    <li><a class="aboutas" href="#aboutas">O NAS</a></li>
+                    <li><a class="navContact" href="#navContact">KONTAKT</a></li>
                 </ul>
             </nav>
-            <p class="H-hello">Quality Point</p>
-            <p class="d-and-p-text-style h-color">Kontrola jakości z siedzibą w Poznaniu.</p>
         </div>
-    </div>
+        <p class="H-hello">Quality Point</p>
+        <p class="d-and-p-text-style h-color">Kontrola jakości z siedzibą w Poznaniu.</p>
+    </header>
     <div class="works">
         <p class="works-scroll">przewiń w dół, aby dowiedzieć się więcej o naszej pracy</p>
         <div class="works-header">
             <p class="sections-name-style section-name-color-works">Nasza praca</p>
         </div>
-        <div class="pineapp">
+        <div class="pineapp" id="ofert">
             <div class="pineapp-left">
                 <div class="branding-web">
-                    <p id="p-branding-web">Jakiś & tekst</p>
+                    <p id="p-branding-web">Nasza oferta</p>
                 </div>
             </div>
             <div class="pineapp-right">
-                <p class="works-inside-section">Header.</p>
-                <p class="period-text">Lorem Ipsum<br> Lorem Ipsum<br> Lorem Ipsum</p>
-                <p class="visit-the-website"><b>Lorem Ipsum</b></p>
+                <p class="works-inside-section">Oferta.</p>
+                <p class="visit-the-website"><b>Świadczymy kompleksowe usługi w zakresie:</b></p>
+                <p class="period-text">
+                    <ul>
+                        <li class="period-text">pomiarów geometrii detali</li>
+                        <li class="period-text">pomiar ramieniem pomiarowym FARO</li>
+                        <li class="period-text">pomiar chropowatości</li>
+                        <li class="period-text">pomiar twardości metali i tworzyw sztucznych</li>
+                        <li class="period-text">pomiar grubości powłok na podłożu ferromagnetycznym</li>
+                        <li class="period-text">badanie składu chemicznego stali</li>
+                        <li class="period-text">sprawdzanie narzędzi pomiarowych</li>
+                        <li class="period-text">rejestrowanie i nadzorowanie sprzętu kontrolno-pomiarowego</li>
+                    </ul>
+                </p>
             </div>
         </div>
-        <div class="healty-dining">
+        <div class="healty-dining" id="tools">
             <div class="healty-dining-left">
-                <p class="works-inside-section text-align-right">Header.</p>
-                <p class="period-text text-align-right">Lorem Ipsum<br> Lorem Ipsum<br> Lorem Ipsum</p>
-                <p class="visit-the-website text-align-right"><b>Lorem Ipsum</b></p>
+                <p class="works-inside-section text-align-right">Narzędzia pomiarowe.</p>
+                <p class="visit-the-website text-align-right"><b>Dysponujemy szeroką gamę narzędzi pomiarowych:</b></p>
+                <p class="period-text text-align-right">
+                    <ul class="align-rights-dots">
+                        <li class="period-text text-align-right">Ramię pomiarowe FaroArm: to przenośne współrzędnościowe urządzenie pomiarowe, które umożliwia wytwórcy łatwą weryfikację jakości produktów dzięki kontroli 3D. Zakres pracy do2,4 m. dokładność: 0,025 mm – punkt oraz 0,036 mm – pomiar
+                            wolumetryczny
+                        </li>
+                        <li class="period-text text-align-right">stół pomiarowy o wymiarach: 80x120 cm</li>
+                        <li class="period-text text-align-right">suwmiarki: 0 – 1500 mm</li>
+                        <li class="period-text text-align-right">kątomierze</li>
+                        <li class="period-text text-align-right">mikrometry: 0 – 300 mm</li>
+                        <li class="period-text text-align-right">sprawdziany do gwintów</li>
+                        <li class="period-text text-align-right">sprawdziany do otworów</li>
+                        <li class="period-text text-align-right">kątowniki</li>
+                        <li class="period-text text-align-right">szczelinomierze: 0,05 – 1 mm</li>
+                        <li class="period-text text-align-right">wysokościomierze: 0 – 600 mm</li>
+                    </ul>
+                </p>
             </div>
             <div class="healty-dining-right">
                 <div class="branding-web-healty-dining">
-                    <p id="p-branding-web-healty-dining">Jakiś & tekst</p>
+                    <p id="p-branding-web-healty-dining">Nasz sprzęt</p>
                 </div>
             </div>
         </div>
         <div class="smart-city">
             <div class="smart-city-left">
                 <div class="branding-web-smart-city">
-                    <p id="p-branding-web-smart-city">Jakiś & tekst</p>
+                    <p id="p-branding-web-smart-city">Nasz sprzęt</p>
                 </div>
             </div>
             <div class="smart-city-right">
-                <p class="works-inside-section">Header.</p>
-                <p class="period-text">Lorem Ipsum<br> Lorem Ipsum<br> Lorem Ipsum</p>
-                <p class="visit-the-website"><b>Lorem Ipsum</b></p>
+                <p class="works-inside-section">Narzędzia pomiarowe cd.</p>
+                <p class="period-text">
+                    <ul>
+                        <li class="period-text">głębokościomierze: 0 – 500 mm</li>
+                        <li class="period-text">spoinomierze</li>
+                        <li class="period-text">średnicówki czujnikowe: 0 – 330 mm</li>
+                        <li class="period-text">wzorce łuków (promieniomierze)</li>
+                        <li class="period-text">przyrządy do pomiaru grubości powłok</li>
+                        <li class="period-text">pryzmy</li>
+                        <li class="period-text">czujniki zegarowe</li>
+                    </ul>
+                </p>
+                <p class="visit-the-website"><b><a class="aboutas visit-the-website" href="#aboutas">Czytaj dalej...</a></b></p>
             </div>
         </div>
     </div>
-    <div class="team">
-        <header class="team-header">
+    <div class="team" id="aboutas">
+        <div class="team-header">
             <p class="sections-name-style section-name-color-team">Zespół</p>
-        </header>
+        </div>
         <div class="team-content">
             <div class="team-left">
-                <p>Poznaj nasz zespół:<br> Lorem Ipsum,Lorem Ipsum,Lorem Ipsum, <br> Lorem Ipsum & Lorem Ipsum.</p>
+                <p>Poznaj nasz zespół:<br><br>Kacper Hering, Specjalista ds. pomiarów <br> Łukasz Baszczyński, Specjalista ds. pomiarów</p>
             </div>
             <div class="team-right">
                 <p class="team-right-how-we-started">O<br> nas</p>
-                <p class="team-right-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-                    book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-                    more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
-                <p class="team-right-text">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied
-                    by English versions from the 1914 translation by H. Rackham.</p>
-                <p class="team-right-text">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied
-                    by English versions from the 1914 translation by H. Rackham.</p>
-                <p class="team-right-text"><b>Next level iceland blue bottle fingerstache: </b></p>
-                <ul class="team-right-text">
-                    <li>hella ennui banh mi iPhone kitsch prism VHS marfa fixie</li>
-                    <li>Typewriter direct trade shoreditch,small batch hexagon</li>
-                    <li>Poutine jean shorts kale chips normcore. </li>
-                </ul>
+                <p class="team-right-text">Współpraca z firma Quality Point jest oczywistym wyborem w przypadku zapotrzebowania na usługi pomiarowe. Profesjonalnie przygotowana grupa specjalistów jest gwarantem realizacji pomiarów o wysokiej jakości. </p>
+                <p class="team-right-text">Nasze centrum usług pomiarowych oferuje pełną gamę pomiarów, gdzie wykorzystujemy profesjonalne narzędzia pomiarowe. Dzięki nam zleceniodawca nie musi inwestować wewłasny sprzęt pomiarowy i personel kontroli jakości.</p>
+                <p class="team-right-text">Takie rozwiązanie pozwala naszym klientom zwiększyć swoją konkurencyjność na rynku, utrzymać wysoką jakość swoich produktów i zachować efektywność kosztów. Zlecenia realizujemy w zależności od potrzeb, u klienta lub w naszym centrum pomiarowym.
+                </p>
+                <p class="team-right-text"><b>Gwarantujemy najwyższy poziom usług!</b></p>
             </div>
         </div>
     </div>
-    <div class="contact">
-        <header class="contact-header">
+    <div class="contact" id="navContact">
+        <div class="contact-header">
             <p class="sections-name-style section-name-color-contact">kontakt</p>
-        </header>
+        </div>
         <div class="contact-content">
             <div class="contact-left">
-                <input placeholder="name">
-                <input placeholder="e-mail">
-                <input placeholder="topic">
+                <input placeholder="Imię i nazwisko">
+                <input placeholder="Adres e-mail">
+                <input placeholder="Teść wiadomości">
+                <button>send</button>
             </div>
             <div class="contact-right">
                 <div class="contact-image"></div>
                 <div class="contact-data">
-                    <p class="contact-data-text">Our office is located in the Poznan</p><br>
-                    <p class="contact-data-text">Feel free to say hello!</p><br>
-                    <p class="contact-data-text"><b>Poznan St. 00/00<br>00-000 Poznan,<br>POLAND</b></p>
+                    <p class="contact-data-text">Nasze biuro znajduje się w Poznaniu</p><br>
+                    <p class="contact-data-text">Serdecznie zapraszamy!</p><br>
+                    <p class="contact-data-text"><b>Poznań Ul.Saperska 36B<br>61-493 Poznań,<br>POLSKA</b></p>
                 </div>
             </div>
         </div>
     </div>
     <footer id="foot">
-        <p class="foot-social-media">Google Maps</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.5195755829504!2d16.914896146032984!3d52.37913080214767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045adcbe0e64a1%3A0x14d1cf5e62493723!2sSaperska+36B%2C+61-493+Pozna%C5%84!5e0!3m2!1spl!2spl!4v1553099997661"
+            allowfullscreen></iframe>
     </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //start behavior nav while scroll 
+            var scrollTop = $(".scrollTop"); //declare variable
+
+            $(window).scroll(function() {
+                if ($(window).width() > 768) { //it's work only for desktop screen not mobile device, nav is still opacity.
+                    // declare variable
+                    var topPos = $(this).scrollTop();
+
+                    // if user scrolls down - show scroll to top button
+                    if (topPos > 100) {
+                        $('nav').css("background", "#456997");
+                        $('nav').css('opacity', '.9');
+
+                    } else {
+                        $('nav').css("background", "transparent");
+                        $('nav').css('opacity', '1');
+                    }
+                }
+            }); //scroll end
+
+            //jump to section
+            $('a').click(function(e) {
+                e.preventDefault();
+                var tmp = e.currentTarget.classList;
+
+                $("html, body").animate({
+                    scrollTop: $('#' + tmp[0]).offset().top - $('nav').height()
+                }, 1000);
+            });
+
+            //toggle menu class menu
+            $('.header-nav-mobile button, nav ul li a').click(function() {
+                if ($(window).width() < 768) { //mobile version
+                    if ($('nav').hasClass('active')) {
+                        $('nav').removeClass('active');
+                    } else {
+                        $('nav').addClass('active');
+                    }
+                }
+            });
+
+            //*start slider header*//
+            /*if ($(window).width() > 768) { // it's work only on desktop 
+                var count = 1;
+                setInterval(function() {
+                    if (count == 3) {
+                        count = 0;
+                        console.log('count ==3 set count->1');
+                    }
+                    $('header').attr('class', 'bg' + count);
+                    count = count + 1;
+                }, 8000);
+            }*/
+            //*end slider header*//
+
+        }); //End document.ready
+    </script>
 </body>
 
 </html>
