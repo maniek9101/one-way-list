@@ -9,42 +9,52 @@
 header {
     width: 100vw;
     height: 100vh;
-    display: flex;
     max-width: 100%;
+    position: relative;
+    /*background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background_header.PNG');
+    background-size: cover;
+    background-repeat: no-repeat;*/
+    z-index: 1;
+    /*transition: all 2s ease-in-out;*/
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background_header.PNG');
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
     background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1;
     transition: all 2s ease-in-out;
 }
 
-.bg0 {
-    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background_header.PNG');
-    background-size: cover;
-    transition: all 1s ease-in-out;
+#slide1 {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background_header.PNG');
 }
 
-.bg1 {
-    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background_header2.PNG');
-    background-size: cover;
-    transition: all 1s ease-in-out;
+#slide2 {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background_header2.PNG');
 }
 
-.bg2 {
-    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background_header3.PNG');
-    background-size: cover;
-    transition: all 1s ease-in-out;
+#slide3 {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background_header3.PNG');
+}
+
+.none {
+    opacity: 0;
 }
 
 .H-hello {
     color: #ffffff;
     font-size: 124px;
     font-family: 'Open Sans', sans-serif;
-    /*text-decoration: underline;*/
-    margin-bottom: 50px;
+    width: 55vw;
+    z-index: 500;
 }
 
 nav {
@@ -136,6 +146,7 @@ nav a:hover {
     font-size: 24px;
     text-align: center;
     font-family: 'Inconsolata', monospace;
+    z-index: 500;
 }
 
 
