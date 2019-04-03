@@ -103,7 +103,7 @@ nav a:hover {
 .header-nav {
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: 9999;
 }
 
 .header-nav-mobile {
@@ -211,6 +211,7 @@ nav a:hover {
     font-family: 'Inconsolata', monospace;
     font-size: 18px;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .text-align-right {
@@ -413,7 +414,7 @@ nav a:hover {
     width: 60vw;
 }
 
-.contact-content {
+form {
     width: 60vw;
     height: auto;
     display: flex;
@@ -426,6 +427,10 @@ nav a:hover {
     height: auto;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+#website {
+    display: none;
 }
 
 .contact-left button {
@@ -639,7 +644,7 @@ footer iframe {
         padding-left: 0;
         padding-right: 0;
     }
-    .contact-content {
+    form {
         flex-direction: column;
     }
     .contact-header {
@@ -654,15 +659,5 @@ footer iframe {
     footer {
         justify-content: space-around;
         flex-direction: column;
-    }
-    .foot-info {
-        position: static;
-    }
-    .foot-social-media {
-        position: static;
-        font-size: 52px;
-    }
-    .foot-img-container {
-        display: flex;
     }
 }

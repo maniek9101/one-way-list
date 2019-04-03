@@ -111,6 +111,7 @@
                         <li class="period-text">przyrządy do pomiaru grubości powłok</li>
                         <li class="period-text">pryzmy</li>
                         <li class="period-text">czujniki zegarowe</li>
+                        <li class="period-text"><b>a także pomożemy w doborze i zamówieniu narzędzi kontrolno-pomiarowych</b></li>
                     </ul>
                 </p>
                 <p class="visit-the-website"><b><a class="aboutas visit-the-website" href="#aboutas">Czytaj dalej...</a></b></p>
@@ -139,12 +140,14 @@
         <div class="contact-header">
             <p class="sections-name-style section-name-color-contact">kontakt</p>
         </div>
-        <div class="contact-content">
+        <form method="post" action="kontakt.php">
             <div class="contact-left">
-                <input placeholder="Imię i nazwisko">
-                <input placeholder="Adres e-mail">
-                <input placeholder="Teść wiadomości">
-                <button>send</button>
+                <input name="name" placeholder="Imię i nazwisko">
+                <input name="email" placeholder="Adres e-mail">
+                <input name="message" placeholder="Teść wiadomości">
+                <input type="text" id="website" name="website" />
+                <!--secret place in website-->
+                <button name="submit">wyślij</button>
             </div>
             <div class="contact-right">
                 <div class="contact-image"></div>
@@ -154,7 +157,7 @@
                     <p class="contact-data-text"><b>Poznań Ul.Saperska 36B<br>61-493 Poznań,<br>POLSKA</b></p>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
     <footer id="foot">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.5195755829504!2d16.914896146032984!3d52.37913080214767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045adcbe0e64a1%3A0x14d1cf5e62493723!2sSaperska+36B%2C+61-493+Pozna%C5%84!5e0!3m2!1spl!2spl!4v1553099997661"
@@ -191,7 +194,7 @@
                 var tmp = e.currentTarget.classList;
 
                 $("html, body").animate({
-                    scrollTop: $('#' + tmp[0]).offset().top - $('nav').height()
+                    scrollTop: $('#' + tmp[0]).offset().top - 40 //-$('nav').height() == 40
                 }, 1000);
             });
 
@@ -228,7 +231,7 @@
                             if (myIndex == 3) direction = 'down';
                         }
                     }
-                }, 8000);
+                }, 3000);
             }
             //*end slider header*//
 
