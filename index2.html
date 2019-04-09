@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>learn api</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        #root {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .card {
+            margin: 1rem;
+            border: 1px solid gray;
+        }
+        
+        @media screen and (min-width: 600px) {
+            .card {
+                flex: 1 1 calc(50% - 2rem);
+            }
+        }
+        
+        @media screen and (min-width: 900px) {
+            .card {
+                flex: 1 1 calc(33% - 2rem);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="search" id="inputId">
+    <button type="submit" name="submit" id="submitId">Search</button>
+    <div id="root"></div>
+
+
+
+    <script>
+        //variable
+        let txt
+        let title
+        let imageBook
+        let description
+
+        //DOM
+        const app = document.getElementById('root')
+        const container = document.createElement('div')
+        container.setAttribute('class', 'container')
+        app.appendChild(container)
+            //END DOM
+
+
+        document.getElementById('submitId').addEventListener('click', function() {
+
+            txt = document.getElementById('inputId').value;
+            //console.log('tekst z inputa: ' + txt);
+
+            //--take data from api---//
+            let request = new XMLHttpRequest()
+            request.open('GET', 'https://www.googleapis.com/books/v1/volumes?q=' + txt, true)
+
+            request.onload = function() {
+                // konwersja na obiekt 
+                var data = JSON.parse(this.response) //it's object
+                    //console.log(data)
+                    //console.log(data.items[0].volumeInfo.description)
+                    //console.log(typeof(data))
+                    //console.log(data.items.length)
+                    //console.log(data.kind)
+                    //console.log(data.items[1])
+                    //PRZEŁADOWANIE
+                if (container.childElementCount > 0) {
+                    console.log('!!! NIE PUSTY, CZYSZCZE !!!')
+                    while (container.firstChild) {
+                        container.removeChild(container.firstChild)
+                    }
+                } else {
+                    console.log('!!!!pusty!!!!')
+                }
+
+                for (i = 0; i < data.items.length; i++) {
+                    //get data
+                    try {
+                        title = data.items[i].volumeInfo.title
+                        description = data.items[i].volumeInfo.description.substring(0, 150)
+                        imageBook = data.items[i].volumeInfo.imageLinks.smallThumbnail
+                    } catch (err) {
+                        console.log('BŁĄD PANIE KOCHANY!!!: ' + err.message)
+                    }
+
+                    console.log('tytul: ' + title)
+                    console.log('opis: ' + description)
+                    console.log('obrazek link: ' + imageBook)
+                    console.log('---------------------------------------------------')
+
+                    //modify DOM
+
+                    const card = document.createElement('div')
+                    card.setAttribute('class', 'card')
+
+                    const h1 = document.createElement('h1')
+                    h1.textContent = title
+
+                    const p = document.createElement('p')
+                    p.textContent = description
+
+                    const coverBook = document.createElement('img')
+                    coverBook.src = imageBook
+
+                    container.appendChild(card)
+                    card.appendChild(h1)
+                    card.appendChild(p)
+                    card.appendChild(coverBook)
+                }
+            }
+
+            request.send()
+        });
+    </script>
+</body>
+
+</html>
