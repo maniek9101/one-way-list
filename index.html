@@ -5,41 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>learn api</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        #root {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .card {
-            margin: 1rem;
-            border: 1px solid gray;
-        }
-        
-        @media screen and (min-width: 600px) {
-            .card {
-                flex: 1 1 calc(50% - 2rem);
-            }
-        }
-        
-        @media screen and (min-width: 900px) {
-            .card {
-                flex: 1 1 calc(33% - 2rem);
-            }
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
+    <title>recruitment task</title>
 </head>
 
 <body>
@@ -55,60 +22,47 @@
         let title
         let imageBook
         let description
+        let data //requests
+        let iterator;
+        let newIterator;
 
         //DOM
         const app = document.getElementById('root')
         const container = document.createElement('div')
         container.setAttribute('class', 'container')
         app.appendChild(container)
-            //END DOM
 
-
+        //Button click 
         document.getElementById('submitId').addEventListener('click', function() {
 
+            iterator = 5;
             txt = document.getElementById('inputId').value;
-            //console.log('tekst z inputa: ' + txt);
 
             //--take data from api---//
             let request = new XMLHttpRequest()
-            request.open('GET', 'https://www.googleapis.com/books/v1/volumes?q=' + txt, true)
+            request.open('GET', 'https://www.googleapis.com/books/v1/volumes?q=' + txt + '&maxResults=40', true)
 
             request.onload = function() {
-                // konwersja na obiekt 
-                var data = JSON.parse(this.response) //it's object
-                    //console.log(data)
-                    //console.log(data.items[0].volumeInfo.description)
-                    //console.log(typeof(data))
-                    //console.log(data.items.length)
-                    //console.log(data.kind)
-                    //console.log(data.items[1])
-                    //PRZEŁADOWANIE
+                data = JSON.parse(this.response) //object data
+
+                //clear if container is not empty
                 if (container.childElementCount > 0) {
-                    console.log('!!! NIE PUSTY, CZYSZCZE !!!')
                     while (container.firstChild) {
                         container.removeChild(container.firstChild)
                     }
-                } else {
-                    console.log('!!!!pusty!!!!')
                 }
 
-                for (i = 0; i < data.items.length; i++) {
-                    //get data
+                for (i = 0; i < iterator; i++) {
+                    //set data
                     try {
                         title = data.items[i].volumeInfo.title
-                        description = data.items[i].volumeInfo.description.substring(0, 150)
+                        description = data.items[i].volumeInfo.description.substring(0, 150) //cut description
                         imageBook = data.items[i].volumeInfo.imageLinks.smallThumbnail
                     } catch (err) {
-                        console.log('BŁĄD PANIE KOCHANY!!!: ' + err.message)
+                        console.log('error: ' + err.message)
                     }
 
-                    console.log('tytul: ' + title)
-                    console.log('opis: ' + description)
-                    console.log('obrazek link: ' + imageBook)
-                    console.log('---------------------------------------------------')
-
-                    //modify DOM
-
+                    //modify, add some DOM
                     const card = document.createElement('div')
                     card.setAttribute('class', 'card')
 
@@ -127,9 +81,47 @@
                     card.appendChild(coverBook)
                 }
             }
-
             request.send()
         });
+
+        //detect end page, load more request
+        window.onscroll = function(e) {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                newIterator = iterator + 5;
+
+                if (iterator < data.items.length) {
+                    for (i = iterator; i < newIterator; i++) {
+                        //set data
+                        try {
+                            title = data.items[i].volumeInfo.title
+                            description = data.items[i].volumeInfo.description.substring(0, 150)
+                            imageBook = data.items[i].volumeInfo.imageLinks.smallThumbnail
+                        } catch (err) {
+                            console.log('error : ' + err.message)
+                        }
+
+                        //modify, add some DOM
+                        const card = document.createElement('div')
+                        card.setAttribute('class', 'card')
+
+                        const h1 = document.createElement('h1')
+                        h1.textContent = title
+
+                        const p = document.createElement('p')
+                        p.textContent = description
+
+                        const coverBook = document.createElement('img')
+                        coverBook.src = imageBook
+
+                        container.appendChild(card)
+                        card.appendChild(h1)
+                        card.appendChild(p)
+                        card.appendChild(coverBook)
+                    }
+                    iterator = newIterator
+                }
+            }
+        };
     </script>
 </body>
 
